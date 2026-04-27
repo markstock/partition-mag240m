@@ -13,6 +13,8 @@ While parallel methods for graph partitioning exist (parmetis and mt-metis), the
 ## HOW
 First, log on to frontier and navigate to a directory on a parallel filesystem, or otherwise ensure that you have >400 GB of disk space available. Then, on a login node (compute nodes cannot see the Internet):
 
+    git clone https://github.com/markstock/partition-mag240m.git
+    cd partition-mag240m/
     module load miniforge3
     conda create --name mag240-env python=3.13 numpy scipy pandas ogb
     source activate mag240-env
