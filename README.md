@@ -34,9 +34,9 @@ Now, for the big task, actually partitioning the data set; in this case, into 64
     module load metis
     srun -A[projectid] -N1 -t240 -pextended -n1 gpmetis -ptype=kway -objtype=vol -contig mag240m.graph 64
 
-or just use this batch script, after changing to your project id:
+or just use this batch script (which will create 8- and a 64-partition versions):
 
-    sbatch runmetis_N1n1.sh
+    sbatch -A[projectid] runmetis_N1n1.sh
 
 Finally, you'll need to split, renumber (global to local IDs), and reorder (place all-local nodes earlier in the array) the metis output to allow for parallel loading and overlapping computation and communications. Note that the argument `num_partitions` must match the number given to the `gpmetis` command above.
 

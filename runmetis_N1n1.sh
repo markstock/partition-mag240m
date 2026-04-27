@@ -1,5 +1,4 @@
 #!/bin/bash
-#SBATCH -A ven114
 #SBATCH -J metis-mag240m
 #SBATCH -o runmetis_%j.out
 #SBATCH -t 240
